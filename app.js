@@ -70,11 +70,11 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
   const itemName = req.body.newItem;
   const listName = req.body.list;
-  
+
   const item = new Item({
     name: itemName
   });
-  
+
   if (listName === "today") {
     item.save();
     res.redirect("/");
@@ -145,7 +145,7 @@ app.get("/about", function (req, res) {
 
 let port = process.env.PORT;
 
-if(port==null || port == "") port=3000;
+if (port == null || port == "") port = 3000;
 
 app.listen(port, function () {
   console.log("Server started !");
